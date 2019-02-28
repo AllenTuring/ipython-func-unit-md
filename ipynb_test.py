@@ -126,7 +126,7 @@ class UnitTest (ITestGroup):
             
     # markdown
     
-    __md_code_format__ = lambda code : '`{}`'.format(repr(code))
+    __md_code_format__ = lambda code : ' '.join('`{}`'.format(repr(code)).replace('\n', '').split())
     __md_colorize__ = lambda msg, clr: '<span style="color:{}">{}</span>'.format(clr, msg)
     
     def __gen_report_md__(self):
